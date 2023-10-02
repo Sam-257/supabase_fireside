@@ -1,50 +1,36 @@
 import React, { useState } from 'react';
-import './login.scss';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Minimalistic icons for show/hide password
+import './login.scss'
 
 const LoginPage = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-    const handleLogin = () => {
-        // Add your login logic here
-        console.log('Logging in with:', { username, password });
-    };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
-    return (
-        <div className="login-page">
-            <div className="login-container">
-                <h2>Login</h2>
-                <div className="input-container">
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="password">Password:</label>
-                    <div className="password-input">
-                        <input
-                        type={showPassword ? 'text' : 'password'}
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <span
-                        className={`eye-icon ${showPassword ? 'visible' : ''}`}
-                        onClick={() => setShowPassword(!showPassword)}
-                        >
-                        {showPassword ? '👁️' : '👁️‍🗨️'}
-                        </span>
-                    </div>
-                </div>
-                <button onClick={handleLogin}>Login</button>
-            </div>
-        </div>
-    );
+  return (
+    <div className="login-container">
+      <h2>Login</h2>
+      <div className="input-container">
+        <input type="text" placeholder="Username" className="login-input" />
+      </div>
+      <div className="input-container">
+        <input
+          type={showPassword ? 'text' : 'password'}
+          placeholder="Password"
+          className="login-input"
+        />
+        <span className="password-toggle" onClick={togglePasswordVisibility}>
+          {showPassword ? <FaEyeSlash /> : <FaEye />}
+        </span>
+      </div>
+      <div className="login-actions">
+        <button className="login-button">Login</button>
+        <span className="forgot-password">Forgot Password?</span>
+      </div>
+    </div>
+  );
 };
 
 export default LoginPage;
