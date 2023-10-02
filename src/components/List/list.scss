@@ -1,0 +1,15 @@
+.list-container {
+    display: flex;
+}
+
+.list-container ul {
+    flex: 1;
+    padding-inline-start: 70px;
+    align-self: center;
+}
+
+.list-container .image-container {
+    flex: 1;
+    margin: 20px
+}
+
