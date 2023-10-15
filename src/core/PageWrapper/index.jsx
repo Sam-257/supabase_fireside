@@ -10,10 +10,10 @@ const PageWrapper = () => {
     return (
         <>
         <nav>
-            <ul className='navbar'>
-                <li className='nav-item left'><Link to="/">Home</Link> </li>
-                <li className='nav-item right'><Link to="/signup">Sign up</Link></li>
-                <li className='nav-item right'><Link to="/login">Login</Link></li>
+            <ul className='s-navbar'>
+                <li className='s-nav-item s-left'><Link to="/">Home</Link> </li>
+                <li className='s-nav-item s-right'><Link to="/signup">Sign up</Link></li>
+                <li className='s-nav-item s-right'><Link to="/login">Login</Link></li>
             </ul>
         </nav>
         <main>

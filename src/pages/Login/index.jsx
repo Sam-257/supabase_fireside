@@ -1,36 +1,31 @@
-import React, { useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Minimalistic icons for show/hide password
-import './login.scss'
+import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
+import './login.scss';
+import Card from 'components/Card';
 
-const LoginPage = () => {
-  const [showPassword, setShowPassword] = useState(false);
+const Login = (props) => {
+    const navigate = useNavigate();
+    const [loginForm, setLoginForm] = useState({email:'', password:''});
+    const [userData, setUserData] = useState([]);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+    const handleChange = (e) => {
+      setLoginForm({...loginForm, [e.target.name]: e.target.value})
+    };
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    }
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <div className="input-container">
-        <input type="text" placeholder="Username" className="login-input" />
-      </div>
-      <div className="input-container">
-        <input
-          type={showPassword ? 'text' : 'password'}
-          placeholder="Password"
-          className="login-input"
-        />
-        <span className="password-toggle" onClick={togglePasswordVisibility}>
-          {showPassword ? <FaEyeSlash /> : <FaEye />}
-        </span>
-      </div>
-      <div className="login-actions">
-        <button className="login-button">Login</button>
-        <span className="forgot-password">Forgot Password?</span>
-      </div>
-    </div>
-  );
-};
+    <Card>
+      <form className='form m-4' onSubmit={handleSubmit}>
+          <h1 className='my-4'>Login</h1>
+          <input type="email" name='email' className='form-control-lg my-3' placeholder='Enter your Email' onChange={handleChange} value={loginForm.email} />
+          <input  type="password" name='password' className='form-control-lg my-3' placeholder='Enter your Password'  onChange={handleChange} value={loginForm.password} />
+          <button type="submit" className='my-4 loginBtn'>Login</button>
+        </form>
+    </Card>
+  )
+}
 
-export default LoginPage;
+export default Login

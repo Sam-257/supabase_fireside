@@ -1,5 +1,5 @@
 // Navbar related
-nav ul.navbar {
+nav ul.s-navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -7,11 +7,11 @@ nav ul.navbar {
     background-color: #333;
 }
 
-.nav-item {
+.s-nav-item {
     padding: 5px 10px;
 }
 
-.nav-item a {
+.s-nav-item a {
     display: block;
     color: white;
     text-align: center;
@@ -19,7 +19,7 @@ nav ul.navbar {
     text-decoration: none;
 }
 
-li.nav-item:hover:not(.active) {
+li.s-nav-item:hover:not(.active) {
     background-color: #111;
 }
 
@@ -27,11 +27,11 @@ li.nav-item:hover:not(.active) {
     background-color: #04AA6D;
 }
 
-.right {
+.s-right {
     float: right;
 }
 
-.left {
+.s-left {
     float: left;
 }
 

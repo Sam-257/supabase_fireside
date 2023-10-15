@@ -1,7 +1,11 @@
 import React from 'react';
 import supabaseLogo from 'assets/supabase-logo-wordmark--light.png';
+import architecture from 'assets/architecture.png';
+import BaaS from 'assets/BaaS.png'
 
 const imageMapper = {
+    architecture,
+    BaaS,
     supabaseLogo
 };
 
