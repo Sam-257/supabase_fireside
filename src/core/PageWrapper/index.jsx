@@ -1,12 +1,10 @@
 import { Suspense } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Loader from 'components/Loader';
 import './pageWrapper.scss';
 
 const PageWrapper = () => {
-    const navigate = useNavigate();
-    const isLoggedIn = false;
-
+    
     return (
         <>
         <nav>

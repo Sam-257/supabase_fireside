@@ -1,12 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
 import './login.scss';
 import Card from 'components/Card';
 
-const Login = (props) => {
-    const navigate = useNavigate();
+const Login = () => {
     const [loginForm, setLoginForm] = useState({email:'', password:''});
-    const [userData, setUserData] = useState([]);
 
     const handleChange = (e) => {
       setLoginForm({...loginForm, [e.target.name]: e.target.value})

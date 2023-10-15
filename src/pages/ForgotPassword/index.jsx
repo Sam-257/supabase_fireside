@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
 import './forgotPassword.scss';
 import Card from 'components/Card';
 
 const ForgotPassword = (props) => {
-    const navigate = useNavigate();
     const [newPwd, setNewPwd] = useState({email:'', password:''});
 
     const handleChange = (e) => {

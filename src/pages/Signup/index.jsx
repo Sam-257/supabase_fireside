@@ -1,13 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
 import './signUp.scss';
 import Card from 'components/Card';
-import supabaseClient from 'config/supabaseClient';
 
-const SignUp = (props) => {
-    const navigate = useNavigate();
+const SignUp = () => {
     const [signUpForm, setSignUpForm] = useState({email:'', password:'', data: {name: ''}});
-    const [userData, setUserData] = useState([]);
 
     const handleChange = (e) => {
       if (e.target.name === 'name'){
@@ -19,13 +15,6 @@ const SignUp = (props) => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      // supabaseClient.auth.signUp(signUpForm)
-      // const { data, error } = await supabaseClient.auth.signUp({
-      //   email: 'example@email.com',
-      //   password: 'example-password',
-      // })
-      supabaseClient.auth.signUp(signUpForm)
-        .then((response) => console.log('signUp', response))
     }
 
   return (
